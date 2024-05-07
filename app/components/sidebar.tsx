@@ -12,8 +12,9 @@ import DeleteIcon from "../icons/delete.svg";
 import MaskIcon from "../icons/mask.svg";
 import PluginIcon from "../icons/plugin.svg";
 import DragIcon from "../icons/drag.svg";
-import BlogIcon from "../icons/blog.svg";
-
+import BlogIcon from "../icons/blog.png";
+import dynamic from "next/dynamic";
+import NextImage from "next/image";
 import Locale from "../locales";
 
 import { useAppConfig, useChatStore } from "../store";
@@ -226,7 +227,7 @@ export function SideBar(props: { className?: string }) {
           </div>
           <div className={styles["sidebar-action"]}>
             <a href={BLOG_URL} target="_blank" rel="noopener noreferrer">
-              <ImageDisplay imageUrl={"../icons/blog.png"}/>
+              <NextImage src={BlogIcon.src} width: {16} height: {16}"/>
             </a>
           </div>
         </div>
