@@ -224,7 +224,7 @@ export function SideBar(props: { className?: string }) {
           </div>
           <div className={styles["sidebar-action"]}>
             <a href={BLOG_URL} target="_blank" rel="noopener noreferrer">
-                <IconButton icon={BlogIcon} shadow= />
+                <IconButton icon={<BlogIcon/>} shadow />
             </a>
           </div>
         </div>
