@@ -12,9 +12,8 @@ import DeleteIcon from "../icons/delete.svg";
 import MaskIcon from "../icons/mask.svg";
 import PluginIcon from "../icons/plugin.svg";
 import DragIcon from "../icons/drag.svg";
-import BlogIcon from "../icons/blog.png";
-import dynamic from "next/dynamic";
-import NextImage from "next/image";
+import BlogIcon from "../icons/blog.svg";
+
 import Locale from "../locales";
 
 import { useAppConfig, useChatStore } from "../store";
@@ -32,7 +31,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { isIOS, useMobileScreen } from "../utils";
 import dynamic from "next/dynamic";
 import { showConfirm, showToast } from "./ui-lib";
-import {ImagePreviewer} from "@/app/components/exporter";
 import ImageDisplay from "@/app/components/ImageDisplay";
 
 const ChatList = dynamic(async () => (await import("./chat-list")).ChatList, {
@@ -162,7 +160,7 @@ export function SideBar(props: { className?: string }) {
           Let&apos;s Chat
         </div>
         <div className={styles["sidebar-sub-title"]}>
-          在看不见的未来，只能拭目以待。
+          在看不见的未来，一起拭目以待。
         </div>
         <div className={styles["sidebar-logo"] + " no-dark"}>
           <ChatGptIcon />
@@ -227,7 +225,7 @@ export function SideBar(props: { className?: string }) {
           </div>
           <div className={styles["sidebar-action"]}>
             <a href={BLOG_URL} target="_blank" rel="noopener noreferrer">
-              <NextImage src={BlogIcon.src} width: {16} height: {16}"/>
+                <ImageDisplay imageUrl={"https://huaji66.github.io/favicon.ico"}/>
             </a>
           </div>
         </div>
