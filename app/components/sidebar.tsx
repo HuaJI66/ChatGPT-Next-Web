@@ -222,7 +222,7 @@ export function SideBar(props: { className?: string }) {
               <IconButton icon={<GithubIcon />} shadow />
             </a>
           </div>
-          <div style={styles["width: 16px,height: 16px"]} className={styles["sidebar-action"]}>
+          <div className={styles["sidebar-action"]}>
             <a href={BLOG_URL} target="_blank" rel="noopener noreferrer">
               <IconButton icon={<BlogIcon />} shadow />
             </a>
