@@ -31,6 +31,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { isIOS, useMobileScreen } from "../utils";
 import dynamic from "next/dynamic";
 import { showConfirm, showToast } from "./ui-lib";
+import {ImagePreviewer} from "@/app/components/exporter";
 
 const ChatList = dynamic(async () => (await import("./chat-list")).ChatList, {
   loading: () => null,
@@ -159,7 +160,7 @@ export function SideBar(props: { className?: string }) {
           Let&apos;s Chat
         </div>
         <div className={styles["sidebar-sub-title"]}>
-          在看不见的未来，一起拭目以待。
+          在看不见的未来，只能拭目以待。
         </div>
         <div className={styles["sidebar-logo"] + " no-dark"}>
           <ChatGptIcon />
@@ -224,7 +225,7 @@ export function SideBar(props: { className?: string }) {
           </div>
           <div className={styles["sidebar-action"]}>
             <a href={BLOG_URL} target="_blank" rel="noopener noreferrer">
-                <img style={("width: 16px;height: 16px")} src={("../icons/blog.png")}/>
+              <img src={"../icons/blog.png"} style={"width: 16px;height: 16px"}/>
             </a>
           </div>
         </div>
