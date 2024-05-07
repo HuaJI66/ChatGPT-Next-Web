@@ -32,6 +32,7 @@ import { isIOS, useMobileScreen } from "../utils";
 import dynamic from "next/dynamic";
 import { showConfirm, showToast } from "./ui-lib";
 import {ImagePreviewer} from "@/app/components/exporter";
+import ImageDisplay from "@/app/components/ImageDisplay";
 
 const ChatList = dynamic(async () => (await import("./chat-list")).ChatList, {
   loading: () => null,
@@ -225,7 +226,7 @@ export function SideBar(props: { className?: string }) {
           </div>
           <div className={styles["sidebar-action"]}>
             <a href={BLOG_URL} target="_blank" rel="noopener noreferrer">
-              <img src={"../icons/blog.png"} style={"width: 16px;height: 16px"}/>
+              <ImageDisplay imageUrl={"../icons/blog.png"}/>
             </a>
           </div>
         </div>
