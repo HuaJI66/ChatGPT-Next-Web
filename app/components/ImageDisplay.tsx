@@ -15,12 +15,11 @@ const ImageDisplay: React.FC<ImageDisplayProps> = ({imageUrl}) => {
 
     return (
         <div>
-            {!isImageLoaded && <div>Loading...</div>}
             <img
                 src={imageUrl}
                 alt="Displayed Image"
                 onLoad={handleImageLoad}
-                style={{display: isImageLoaded ? 'width: 16px;height: 16px' : 'none'}}
+                style="width: 16px;height: 16px"
             />
         </div>
     );
