@@ -19,7 +19,7 @@ const ImageDisplay: React.FC<ImageDisplayProps> = ({imageUrl}) => {
                 src={imageUrl}
                 alt="Displayed Image"
                 onLoad={handleImageLoad}
-                style="width: 16px;height: 16px"
+                style={{ display: isImageLoaded ? 'width: 16px;height: 16px' : 'width: 16px;height: 16px' }}
             />
         </div>
     );
