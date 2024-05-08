@@ -82,6 +82,7 @@ import {
 } from "./ui-lib";
 import { useNavigate } from "react-router-dom";
 import {
+  BLOG_URL,
   CHAT_PAGE_SIZE,
   LAST_INPUT_KEY,
   Path,
@@ -97,6 +98,7 @@ import { ExportMessageModal } from "./exporter";
 import { getClientConfig } from "../config/client";
 import { useAllModels } from "../utils/hooks";
 import { MultimodalContent } from "../client/api";
+import BlogIcon from "@/app/icons/blog.png";
 
 const Markdown = dynamic(async () => (await import("./markdown")).Markdown, {
   loading: () => <LoadingIcon />,
@@ -1340,7 +1342,8 @@ function _Chat() {
                         ></IconButton>
                       </div>
                       {isUser ? (
-                        <Avatar avatar={config.avatar} />
+                          <img style={{ width: '30px', height: '30px' }} src={ BlogIcon.src }/>
+                        // <Avatar avatar={config.avatar} />
                       ) : (
                         <>
                           {["system"].includes(message.role) ? (
