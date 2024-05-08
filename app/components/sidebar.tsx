@@ -162,15 +162,17 @@ export function SideBar(props: { className?: string }) {
           在看不见的未来，一起拭目以待。
         </div>
         <div className={styles["sidebar-logo"] + " no-dark"}>
-          <ChatGptIcon />
+            <a href={BLOG_URL} target="_blank" rel="noopener noreferrer">
+              <img style={{width: '43px', height: '43px'}} src={BlogIcon.src}/>
+            </a>
         </div>
       </div>
 
       <div className={styles["sidebar-header-bar"]}>
         <IconButton
-          icon={<MaskIcon />}
-          text={shouldNarrow ? undefined : Locale.Mask.Name}
-          className={styles["sidebar-bar-button"]}
+            icon={<MaskIcon/>}
+            text={shouldNarrow ? undefined : Locale.Mask.Name}
+            className={styles["sidebar-bar-button"]}
           onClick={() => {
             if (config.dontShowMaskSplashScreen !== true) {
               navigate(Path.NewChat, { state: { fromHome: true } });
@@ -220,11 +222,6 @@ export function SideBar(props: { className?: string }) {
           <div className={styles["sidebar-action"]}>
             <a href={REPO_URL} target="_blank" rel="noopener noreferrer">
               <IconButton icon={<GithubIcon />} shadow />
-            </a>
-          </div>
-          <div className={styles["sidebar-action"]}>
-            <a href={BLOG_URL} target="_blank" rel="noopener noreferrer">
-              <img style={{ width: '16px', height: '16px' }} src={ BlogIcon.src }/>
             </a>
           </div>
         </div>
