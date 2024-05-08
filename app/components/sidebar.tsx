@@ -12,7 +12,7 @@ import DeleteIcon from "../icons/delete.svg";
 import MaskIcon from "../icons/mask.svg";
 import PluginIcon from "../icons/plugin.svg";
 import DragIcon from "../icons/drag.svg";
-import BlogIcon from "../icons/blog.svg";
+import BlogIcon from "../icons/blog.png";
 
 import Locale from "../locales";
 
@@ -222,9 +222,9 @@ export function SideBar(props: { className?: string }) {
               <IconButton icon={<GithubIcon />} shadow />
             </a>
           </div>
-          <div style={{ width: '16px', height: '16px' }} className={styles["sidebar-action"]}>
+          <div className={styles["sidebar-action"]}>
             <a href={BLOG_URL} target="_blank" rel="noopener noreferrer">
-              <IconButton icon={<BlogIcon />} shadow />
+              <img style={{ width: '16px', height: '16px' }} src={ BlogIcon.src }/>
             </a>
           </div>
         </div>
