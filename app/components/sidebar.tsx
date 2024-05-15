@@ -13,6 +13,7 @@ import MaskIcon from "../icons/mask.svg";
 import PluginIcon from "../icons/plugin.svg";
 import DragIcon from "../icons/drag.svg";
 import BlogIcon from "../icons/blog.png";
+import SimIcon from "../icons/sim.png";
 
 import Locale from "../locales";
 
@@ -217,16 +218,16 @@ export function SideBar(props: { className?: string }) {
               <IconButton icon={<SettingsIcon/>} shadow/>
             </Link>
           </div>
-          <div className={styles["sidebar-action"]}>
-            <a href={REPO_URL} target="_blank" rel="noopener noreferrer">
-              <IconButton icon={<GithubIcon/>} shadow/>
-            </a>
-          </div>
           {/*<div className={styles["sidebar-action"]}>*/}
-          {/*  <a href={BLOG_URL} target="_blank" rel="noopener noreferrer">*/}
-          {/*    <img style={{width: '36px', height: '36px'}} src={BlogIcon.src}/>*/}
+          {/*  <a href={REPO_URL} target="_blank" rel="noopener noreferrer">*/}
+          {/*    <IconButton icon={<GithubIcon/>} shadow/>*/}
           {/*  </a>*/}
           {/*</div>*/}
+          <div className={styles["sidebar-action"]}>
+            <a href={BLOG_URL} target="_blank" rel="noopener noreferrer">
+              <img style={{width: '36px', height: '36px'}} src={SimIcon.src}/>
+            </a>
+          </div>
         </div>
         <div>
           <IconButton
