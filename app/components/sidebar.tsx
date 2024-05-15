@@ -25,7 +25,7 @@ import {
   MIN_SIDEBAR_WIDTH,
   NARROW_SIDEBAR_WIDTH,
   Path,
-  REPO_URL, BLOG_URL
+  REPO_URL, BLOG_URL,SIM_URL
 } from "../constant";
 
 import { Link, useNavigate } from "react-router-dom";
@@ -224,7 +224,7 @@ export function SideBar(props: { className?: string }) {
           {/*  </a>*/}
           {/*</div>*/}
           <div className={styles["sidebar-action"]}>
-            <a href={BLOG_URL} target="_blank" rel="noopener noreferrer">
+            <a href={SIM_URL} target="_blank" rel="noopener noreferrer">
               <img style={{width: '36px', height: '36px'}} src={SimIcon.src}/>
             </a>
           </div>

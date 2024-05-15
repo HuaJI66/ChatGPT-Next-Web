@@ -1,5 +1,6 @@
 export const OWNER = "HuaJi66";
 export const BLOG_URL = `https://huaji66.github.io`;
+export const SIM_URL = `https://haokawx.lot-ml.com/Product/Index/405779`;
 export const REPO = "ChatGPT-Next-Web";
 export const REPO_URL = `https://github.com/${OWNER}/${REPO}`;
 export const ISSUE_URL = `https://github.com/${OWNER}/${REPO}/issues`;
