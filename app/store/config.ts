@@ -8,7 +8,7 @@ import {
   StoreKey,
 } from "../constant";
 import { createPersistStore } from "../utils/store";
-
+export const runtime = 'edge';
 export type ModelType = (typeof DEFAULT_MODELS)[number]["name"];
 
 export enum SubmitKey {
