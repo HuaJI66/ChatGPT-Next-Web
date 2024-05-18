@@ -15,9 +15,10 @@ FROM base AS builder
 
 RUN apk update && apk add --no-cache git
 
-ENV OPENAI_API_KEY=""
+ENV OPENAI_API_KEY="sk-byEnt7I4y01o9Q3RBd44D54dB4D0470681A4C0E77b1fF5E2"
 ENV GOOGLE_API_KEY=""
-ENV CODE=""
+ENV CODE="pikachu,huaji66,klsnb,666,777,888,999,000"
+ENV BASE_URL =" https://api.xty.app"
 
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
@@ -30,10 +31,11 @@ WORKDIR /app
 
 RUN apk add proxychains-ng
 
-ENV PROXY_URL=""
-ENV OPENAI_API_KEY=""
+ENV PROXY_URL="http://127.0.0.1:789"
+ENV OPENAI_API_KEY="pikachu,huaji66,klsnb,666,777,888,999,000"
 ENV GOOGLE_API_KEY=""
-ENV CODE=""
+ENV CODE="pikachu,huaji66,klsnb,666,777,888,999,000"
+ENV BASE_URL =" https://api.xty.app"
 
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next/standalone ./
