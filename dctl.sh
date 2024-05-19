@@ -36,7 +36,7 @@ restart() {
   docker restart $CONTAINER_NAME
 }
 
-rm() {
+remove() {
   docker stop $CONTAINER_NAME
   docker rm $CONTAINER_NAME
 }
@@ -73,15 +73,17 @@ deploy() {
   echo "copy dctl.sh to $DEPLOY_HOST:$DEPLOY_PATH"
   sshpass -p $DEPLOY_PASSWD scp $work_dir/dctl.sh $DEPLOY_USER_NAME@$DEPLOY_HOST:$DEPLOY_PATH
   echo 'exec deploy dctl script....'
-  sshpass -p $DEPLOY_PASSWD ssh $DEPLOY_USER_NAME@$DEPLOY_HOST "cd $DEPLOY_PATH && sh dctl.sh rm && docker rmi $IMAGES_NAME && sh dctl.sh create && sh dctl log"
+  sshpass -p $DEPLOY_PASSWD ssh $DEPLOY_USER_NAME@$DEPLOY_HOST "cd $DEPLOY_PATH && sh dctl.sh remove && docker rmi $IMAGES_NAME && sh dctl.sh create && sh dctl log"
 }
 
 upload(){
   build
   echo "upload artifact"
+  remove
   create
   mkdir artifact
   docker cp $CONTAINER_NAME:/app artifact
+  remove
 }
 
 help() {
@@ -91,7 +93,7 @@ help() {
   echo "restart   restart docker container"
   echo "ps        ps docker container $CONTAINER_NAME"
   echo "stats     docker container $CONTAINER_NAME status"
-  echo "rm        stop and remove docker container"
+  echo "remove        stop and remove docker container"
   echo "log       docker logs"
   echo "shell     docker exec -it $CONTAINER_NAME bash"
 }
@@ -121,9 +123,9 @@ stats)
   echo "docker container $CONTAINER_NAME status"
   stats
   ;;
-rm)
-  echo "rm container $CONTAINER_NAME"
-  rm
+remove)
+  echo "remove container $CONTAINER_NAME"
+  remove
   ;;
 log)
   log
