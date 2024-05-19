@@ -79,9 +79,8 @@ deploy() {
 upload(){
   build
   echo "upload artifact"
-  start
-  stop
-  rm artifact && mkdir artifact
+  create
+  mkdir artifact
   docker cp $CONTAINER_NAME:/app artifact
 }
 
