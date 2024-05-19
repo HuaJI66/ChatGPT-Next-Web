@@ -49,7 +49,7 @@ shell() {
   docker exec -it $CONTAINER_NAME bash
 }
 build() {
-  docker builder prune
+  # docker builder prune
   echo "build $IMAGES_NAME...."
   docker rmi -f $IMAGES_NAME
   docker build \
