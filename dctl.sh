@@ -141,6 +141,9 @@ push)
 deploy)
   deploy
   ;;
+upload)
+  upload
+  ;;
 *)
   help
   exit 1
