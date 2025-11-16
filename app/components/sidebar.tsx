@@ -229,6 +229,10 @@ export function SideBar(props: { className?: string }) {
               <img style={{width: '36px', height: '36px'}} src={SimIcon.src}/>
             </a>
           </div>
+          {/*快递查询*/}
+          <div className={styles["sidebar-action"]}>
+            <a href="http://www.kuaidi.com/" target="_blank">快递查询API</a>
+          </div>
         </div>
         <div>
           <IconButton
